@@ -3,14 +3,21 @@ import { Text, View, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Screen2 from './Screens/Screen2';
+import Screen3 from './Screens/Screen3';
+
 
 class HomeScreen extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
   }
 
   next () {
-    this.props.navigation.navigate('SecondScreen');
+
+    var tempArrya = [1,2,3,4];
+    this.props.navigation.push('SecondScreen', {
+      james: 'hello',
+      todos: tempArrya
+    });
     
   }
 
@@ -28,7 +35,8 @@ class HomeScreen extends React.Component{
 const appNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    SecondScreen: Screen2
+    SecondScreen: Screen2,
+    ThirdScreen: Screen3
   },
   {
     initialRouteName: 'Home',
