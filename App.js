@@ -11,6 +11,7 @@ class HomeScreen extends React.Component{
 
   next () {
     this.props.navigation.navigate('SecondScreen');
+    
   }
 
   render() {
